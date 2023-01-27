@@ -21,17 +21,18 @@ app.get('/', async (req, res) => {
   })
 })
 
+
+
+app.post('/', async (req, res) => {
+  try {
+    const prompt = req.body.prompt;
+    
 const name = "My name is Sriman, an AI Bot Developed by SV Infotech Software Solutions";
 app.get('/name', (req, res) => {
     res.status(200).send({
         name: name
     });
 });
-
-app.post('/', async (req, res) => {
-  try {
-    const prompt = req.body.prompt;
-
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `${prompt}`,

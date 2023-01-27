@@ -28,16 +28,16 @@ let data = {
     "timezone": timezone
 }
 
+
 app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;
     
-const name = "My name is Sriman, an AI Bot Developed by SV Infotech Software Solutions";
-app.get('/name', (req, res) => {
-    res.status(200).send({
-        name: name
-    });
-});
+const prompt = req.body.prompt;
+    if (prompt.includes("name") || prompt.includes("introduce yourself")) {
+      data.prompt = "My name is Sriman"
+    }
+    
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `${prompt}`,

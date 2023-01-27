@@ -7,11 +7,11 @@ const chatContainer = document.querySelector('#chat_container')
 let loadInterval
 
 function loader(element) {
-    element.textContent = ''
+    element.textContent = 'Thinking'
 
     loadInterval = setInterval(() => {
         // Update the text content of the loading indicator
-        element.textContent += 'Thinking.';
+        element.textContent += '.';
 
         // If the loading indicator has reached three dots, reset it
         if (element.textContent === '....') {

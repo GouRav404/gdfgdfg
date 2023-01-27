@@ -21,6 +21,13 @@ app.get('/', async (req, res) => {
   })
 })
 
+const name = "My name is Sriman, an AI language model developed by SV Infotech Software Solutions";
+app.get('/name', (req, res) => {
+    res.status(200).send({
+        name: name
+    });
+});
+
 app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;

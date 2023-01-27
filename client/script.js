@@ -25,7 +25,7 @@ function loader(element) {
 //             element.textContent = '';
 //         }
 //     }, 300);
-// }
+ }
 
 function typeText(element, text) {
     let index = 0

@@ -21,19 +21,12 @@ app.get('/', async (req, res) => {
   })
 })
 
-let timezone = 'UTC+05:30'
-let data = {
-    "prompt": "What is the current time in "+timezone+" ?",
-    "temperature": 0.5,
-    "timezone": timezone
-}
 
 
 app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;
     
-const prompt = req.body.prompt;
     if (prompt.includes("name") || prompt.includes("introduce yourself")) {
       data.prompt = "My name is Sriman"
     }

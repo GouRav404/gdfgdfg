@@ -7,14 +7,27 @@ const chatContainer = document.querySelector('#chat_container')
 let loadInterval
 
 function loader(element) {
-    element.textContent = ''
+    element.textContent = 'Loading';
 
     loadInterval = setInterval(() => {
-    element.textContent = "Thinking" + element.textContent + '.';
-    if (element.textContent === 'Thinking....') {
-        element.textContent = 'Thinking';
-    }
-}, 300);
+        // Update the text content of the loading indicator
+        element.textContent += '.';
+
+        // If the loading indicator has reached three dots, reset it
+        if (element.textContent.endsWith('....')) {
+            element.textContent = 'Loading';
+        }
+    }, 300);
+}
+// function loader(element) {
+//     element.textContent = ''
+
+//     loadInterval = setInterval(() => {
+//     element.textContent = "Thinking" + element.textContent + '.';
+//     if (element.textContent === 'Thinking....') {
+//         element.textContent = 'Thinking';
+//     }
+// }, 300);
 
 //     loadInterval = setInterval(() => {
 //         // Update the text content of the loading indicator
@@ -25,7 +38,7 @@ function loader(element) {
 //             element.textContent = '';
 //         }
 //     }, 300);
- }
+ //}
 
 function typeText(element, text) {
     let index = 0

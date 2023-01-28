@@ -70,8 +70,7 @@ const handleSubmit = async (e) => {
 
     // user's chatstripe
     chatContainer.innerHTML += chatStripe(false, data.get('prompt'))
-     chatContainer.scrollTop = chatContainer.scrollHeight;
-
+     
 
     // to clear the textarea input 
     form.reset()

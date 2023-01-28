@@ -22,23 +22,33 @@
     <script type="module" src="script.js"></script>
       <script>
   var chat_container = document.getElementById("chat_container");
-  var hi = document.createElement("hi");
-  hi.style.textAlign = "center";
-  hi.style.margin = "auto";
-  hi.style.fontSize = "xxx-large";
-  hi.style.color = "grey";
-  hi.innerHTML = "";
-  chat_container.appendChild(hi);
-  var text = "Hello, I am Sriman, how can I help you?";
-  var i = 0;
-  function typeWriter() {
+var hi = document.createElement("hi");
+hi.style.textAlign = "center";
+hi.style.margin = "auto";
+hi.style.fontSize = "xxx-large";
+hi.style.color = "grey";
+hi.innerHTML = "";
+chat_container.appendChild(hi);
+
+var text = "Hello, I am Sriman, how can I help you?";
+var i = 0;
+function typeWriter() {
     if (i < text.length) {
-      hi.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 50);
+        hi.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+    } else {
+        // Create a new <p> element
+        var nextLine = document.createElement("p");
+        nextLine.style.textAlign = "center";
+        nextLine.style.margin = "auto";
+        nextLine.style.color = "grey";
+        nextLine.innerHTML = "What can I do for you?";
+        // Append the new <p> element to the chat_container
+        chat_container.appendChild(nextLine);
     }
-  }
-  typeWriter();
+}
+typeWriter();
 </script>
   </body>
 </html>

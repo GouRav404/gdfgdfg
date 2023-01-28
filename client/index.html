@@ -10,12 +10,7 @@
   <body>
     <div id="app">
       <div id="chat_container">
-      <hi style="
-    text-align: center;
-    padding-top: 12%;
-    font-size: xxx-large;
-    color: grey;
-">Hello, i am Sriman, how can I help you?</hi>
+      
       </div>
 
       <form>
@@ -26,10 +21,24 @@
 
     <script type="module" src="script.js"></script>
       <script>
-   var chat_container = document.getElementById("chat_container");
-   var hi = document.createElement("hi");
-   hi.innerHTML = "Hello, how can I help you?";
-   chat_container.appendChild(hi);
+  var chat_container = document.getElementById("chat_container");
+  var hi = document.createElement("hi");
+  hi.style.textAlign = "center";
+  hi.style.paddingTop = "12%";
+  hi.style.fontSize = "xxx-large";
+  hi.style.color = "grey";
+  hi.innerHTML = "";
+  chat_container.appendChild(hi);
+  var text = "Hello, I am Sriman, how can I help you?";
+  var i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      hi.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 50);
+    }
+  }
+  typeWriter();
 </script>
   </body>
 </html>

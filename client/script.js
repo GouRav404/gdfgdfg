@@ -78,8 +78,6 @@ const handleSubmit = async (e) => {
     const uniqueId = generateUniqueId()
     chatContainer.innerHTML += chatStripe(true, " ", uniqueId)
     
-    chatContainer.innerHTML += chatStripe(true, "Bot's response");
-chatContainer.scrollTop = chatContainer.scrollHeight;
 
     // to focus scroll to the bottom 
     chatContainer.scrollTop = chatContainer.scrollHeight;
